@@ -5,7 +5,7 @@ export function initialize(container, application) {
 
   application.register('realtime:signalr', realtime, { instantiate: false });
 
-  application.inject('route:index', 'signalr', 'realtime:signalr');
+  application.inject('route:chat', 'signalr', 'realtime:signalr');
 }
 
 export default {

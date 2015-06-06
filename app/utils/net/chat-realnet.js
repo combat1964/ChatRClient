@@ -13,12 +13,16 @@ class RealNet {
       return;
     }
 
-    server[fn].apply(null, args);
+    server[fn].call(null, args);
   }
 
 
   sendLobbyRequest(fn, args) {
     this.netAction(fn, args, 'lobby');
+  }
+
+  join(nickname) {
+    this.signalr.start(nickname);
   }
 }
 

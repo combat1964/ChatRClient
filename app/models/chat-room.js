@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 var Room = Ember.Object.extend({
-  addMessage: function(sender, msg) {
+  addMessage: function(msg) {
     var messages = this.get('messages');
 
     messages.addObject(msg);
@@ -13,10 +13,11 @@ var Room = Ember.Object.extend({
   }  
 });
 
-Room.buildNew = function(users, messages) {
+Room.buildNew = function(users, messages, topic) {
   return Room.create({
     users: users,
-    messages: messages
+    messages: messages,
+    topic: topic
   });
 };
 

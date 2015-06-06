@@ -17,6 +17,7 @@ class SignalRConnection {
     this.lobby = lobby;    
 
     this.addLobbyClientBinding('lobbyEntered');
+    this.addLobbyClientBinding('chatSent');
   }
 
   addLobbyClientBinding(fn) {
@@ -25,7 +26,7 @@ class SignalRConnection {
   }
 
 
-  start() {
+  start(name) {
     var self = this;
 
     var hub = this.connection.hub;
@@ -37,7 +38,8 @@ class SignalRConnection {
     return hub.start({
       withCredentials: false
     }).then(function() {
-      self.lobby.server.join();
+      console.log('connected');
+      self.lobby.server.join(name);
     });
   }
 }
