@@ -25,6 +25,13 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.contentSecurityPolicy = {
+      'script-src': "http://192.168.56.103:35729 http://192.168.56.103:4200",
+      'style-src': "https://fonts.googleapis.com http://192.168.56.103:4200",
+      'connect-src': "'self' ws://192.168.56.103:35729",
+      'font-src': "https://fonts.gstatic.com http://192.168.56.103:4200 data:"
+    };
   }
 
   if (environment === 'test') {
