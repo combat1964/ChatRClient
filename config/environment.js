@@ -27,9 +27,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV.contentSecurityPolicy = {
-      'script-src': "http://192.168.56.103:35729 http://192.168.56.103:4200",
+      'script-src': "http://192.168.56.103:35729 http://192.168.56.103:4200 http://localhost:53246",
       'style-src': "https://fonts.googleapis.com http://192.168.56.103:4200",
-      'connect-src': "'self' ws://192.168.56.103:35729",
+      'connect-src': "'self' ws://192.168.56.103:35729 http://localhost:53246 ws://localhost:53246",
       'font-src': "https://fonts.gstatic.com http://192.168.56.103:4200 data:"
     };
   }

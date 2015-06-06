@@ -32,8 +32,10 @@ export default Ember.Controller.extend({
 
   actions: {
     sendChat: function(msg) {
-      this.addMessage('ME', msg);
-      this.userJoin(msg);
+      // this.addMessage('ME', msg);
+      // this.userJoin(msg);
+
+      
     }
   }
 });
