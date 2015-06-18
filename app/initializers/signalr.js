@@ -1,7 +1,7 @@
 import SignalRConnection from 'chatr/utils/net/chatr-realtime';
 
 export function initialize(container, application) {
-  var realtime = new SignalRConnection('http://localhost:53246/signalr');
+  var realtime = new SignalRConnection('http://chatr1.gear.host/signalr');
 
   application.register('realtime:signalr', realtime, { instantiate: false });
 
